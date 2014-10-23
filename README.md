@@ -51,8 +51,8 @@ Build the Docker image as follows:
 
 Start the container:
 
-    $ docker run -d --restart=on-failure -v /path/to/docker-pdns-slave/zones:/zones -p 53:53/udp -p 53:53/tcp pdns-slave
-
-The PowerDNS process it the only one executed in the container, so it is (probably) important to you to ensure you set `--restart=on-failure`, in case the daemon dies and you\`re left without a DNS server!
+    $ docker run -d -v /path/to/docker-pdns-slave/zones:/zones -p 53:53/udp -p 53:53/tcp pdns-slave
 
 The command above will map port 53 (TCP and UDP) to port 53 on the Docker host. If this is not what you want, adjust the command above to suit.
+
+PowerDNS provides it's own "guardian" instance, so should restart in the event of failure.
