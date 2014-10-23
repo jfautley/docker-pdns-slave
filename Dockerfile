@@ -9,6 +9,7 @@ RUN yum -y upgrade && \
     yum clean all
 
 ADD pdns /etc/pdns
+ADD zones /zones
 
 VOLUME ["/zones"]
 

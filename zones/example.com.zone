@@ -1,0 +1,11 @@
+$TTL 60
+@               IN      SOA     example.com. hostmaster.example.com. (
+                                1       ; Serial
+                                28800   ; Refresh
+                                7200    ; Retry
+                                604800  ; Expire
+                                86400)  ; Minimum TTL
+                        NS      example.com.
+
+localhost       IN      A       127.0.0.1
+test            IN      CNAME   localhost
