@@ -49,6 +49,10 @@ Build the Docker image as follows:
     $ cd docker-pdns-slave
     $ docker build -t pdns-slave .
 
+or, get the image from the Docker Hub registry:
+
+    $ docker pull jfautley/pdns-slave
+
 Start the container:
 
     $ docker run -d -v /path/to/docker-pdns-slave/zones:/zones -p 53:53/udp -p 53:53/tcp pdns-slave
@@ -56,3 +60,5 @@ Start the container:
 The command above will map port 53 (TCP and UDP) to port 53 on the Docker host. If this is not what you want, adjust the command above to suit.
 
 PowerDNS provides it's own "guardian" instance, so should restart in the event of failure.
+
+If you do not provide a mount for `/zones`, then example data will be used. You can test the server is working with `dig -t A localhost.example.com @localhost`.
