@@ -12,4 +12,4 @@ ADD pdns /etc/pdns
 
 VOLUME ["/zones"]
 
-ENTRYPOINT ["/usr/sbin/pdns_server"]
+ENTRYPOINT ["/usr/sbin/pdns_server", "--guardian=yes"]
