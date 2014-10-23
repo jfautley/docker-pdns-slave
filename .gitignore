@@ -1,0 +1,2 @@
+# Ignore anything in our zones directory, as this could contain user data
+zones/
